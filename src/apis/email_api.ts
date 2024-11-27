@@ -6,7 +6,7 @@ export class EmailApi extends BasicNet{
         return await this.post('/email/captcha/send',data)
     }
     async CheckCaptcha(data: UserCaptchaCheck){
-        return await this.post('/email/captcha/check',data)
+        return await this.post('/email/captcha/verify',data)
     }
     async SendResetPassword(data: UserCaptchaEmail){
         return await this.post('/email/forget',data)

@@ -19,7 +19,7 @@ class EmailApi extends basicNet_1.BasicNet {
     }
     CheckCaptcha(data) {
         return __awaiter(this, void 0, void 0, function* () {
-            return yield this.post('/email/captcha/check', data);
+            return yield this.post('/email/captcha/verify', data);
         });
     }
     SendResetPassword(data) {
