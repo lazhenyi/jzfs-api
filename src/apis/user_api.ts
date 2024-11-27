@@ -7,27 +7,37 @@ export class UserApi extends BasicNet{
     async Apply(data: UserApply):
         Promise<AxiosResponse<R<ExecResult>, axios.AxiosError>>
     {
-        return await this.post('/user/apply',data)
+        return await this.post('/user/apply',{
+            inner: window.btoa(JSON.stringify(data))
+        })
     }
     async LoginName(data: UserLogin):
         Promise<AxiosResponse<R<undefined>, axios.AxiosError>>
     {
-        return await this.post('/user/login/name',data)
+        return await this.post('/user/login/name',{
+            inner: window.btoa(JSON.stringify(data))
+        })
     }
     async LoginEmail(data: UserLoginEmail):
         Promise<AxiosResponse<R<undefined>, axios.AxiosError>>
     {
-        return await this.post('/user/login/email',data)
+        return await this.post('/user/login/email',{
+            inner: window.btoa(JSON.stringify(data))
+        })
     }
     async ResetPassword(data: UserResetPassword):
         Promise<AxiosResponse<R<undefined>, axios.AxiosError>>
     {
-        return await this.post('/user/reset/online',data)
+        return await this.post('/user/reset/online',{
+            inner: window.btoa(JSON.stringify(data))
+        })
     }
     async ResetPasswordEmail(data: UserResetPassword):
         Promise<AxiosResponse<R<undefined>, axios.AxiosError>>
     {
-        return await this.post('/user/reset/forget',data)
+        return await this.post('/user/reset/forget',{
+            inner: window.btoa(JSON.stringify(data))
+        })
     }
     async Logout():
         Promise<AxiosResponse<R<undefined>, axios.AxiosError>>
