@@ -9,58 +9,40 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UserApi = void 0;
+exports.GroupApi = void 0;
 const basicNet_1 = require("../basicNet");
-class UserApi extends basicNet_1.BasicNet {
-    Apply(data) {
+class GroupApi extends basicNet_1.BasicNet {
+    Create(dto) {
         return __awaiter(this, void 0, void 0, function* () {
-            return yield this.post('/users/apply', {
-                inner: window.btoa(JSON.stringify(data))
+            return yield this.post('/group/create', dto);
+        });
+    }
+    Delete(dto) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return yield this.post('/group/delete', dto);
+        });
+    }
+    CheckName(dto) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return yield this.post('/group/check/name', dto);
+        });
+    }
+    CheckOwner(dto) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return yield this.post('/group/check/owner', dto);
+        });
+    }
+    ListOwner() {
+        return __awaiter(this, void 0, void 0, function* () {
+            return yield this.post('/group/list/owner', {});
+        });
+    }
+    SearchByName(name) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return yield this.post('/group/search/name', {
+                name: name
             });
-        });
-    }
-    LoginName(data) {
-        return __awaiter(this, void 0, void 0, function* () {
-            return yield this.post('/users/login/name', {
-                inner: window.btoa(JSON.stringify(data))
-            });
-        });
-    }
-    LoginEmail(data) {
-        return __awaiter(this, void 0, void 0, function* () {
-            return yield this.post('/users/login/email', {
-                inner: window.btoa(JSON.stringify(data))
-            });
-        });
-    }
-    ResetPassword(data) {
-        return __awaiter(this, void 0, void 0, function* () {
-            return yield this.post('/users/reset/online', {
-                inner: window.btoa(JSON.stringify(data))
-            });
-        });
-    }
-    ResetPasswordEmail(data) {
-        return __awaiter(this, void 0, void 0, function* () {
-            return yield this.post('/users/reset/forget', {
-                inner: window.btoa(JSON.stringify(data))
-            });
-        });
-    }
-    Logout() {
-        return __awaiter(this, void 0, void 0, function* () {
-            return yield this.post('/users/logout', {});
-        });
-    }
-    Update(data) {
-        return __awaiter(this, void 0, void 0, function* () {
-            return yield this.post('/users/update', data);
-        });
-    }
-    Local() {
-        return __awaiter(this, void 0, void 0, function* () {
-            return yield this.post('/users/local', {});
         });
     }
 }
-exports.UserApi = UserApi;
+exports.GroupApi = GroupApi;

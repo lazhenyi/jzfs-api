@@ -7,52 +7,52 @@ export class UserApi extends BasicNet{
     async Apply(data: UserApply):
         Promise<AxiosResponse<R<ExecResult>, axios.AxiosError>>
     {
-        return await this.post('/user/apply',{
+        return await this.post('/users/apply',{
             inner: window.btoa(JSON.stringify(data))
         })
     }
     async LoginName(data: UserLogin):
         Promise<AxiosResponse<R<undefined>, axios.AxiosError>>
     {
-        return await this.post('/user/login/name',{
+        return await this.post('/users/login/name',{
             inner: window.btoa(JSON.stringify(data))
         })
     }
     async LoginEmail(data: UserLoginEmail):
         Promise<AxiosResponse<R<undefined>, axios.AxiosError>>
     {
-        return await this.post('/user/login/email',{
+        return await this.post('/users/login/email',{
             inner: window.btoa(JSON.stringify(data))
         })
     }
     async ResetPassword(data: UserResetPassword):
         Promise<AxiosResponse<R<undefined>, axios.AxiosError>>
     {
-        return await this.post('/user/reset/online',{
+        return await this.post('/users/reset/online',{
             inner: window.btoa(JSON.stringify(data))
         })
     }
     async ResetPasswordEmail(data: UserResetPassword):
         Promise<AxiosResponse<R<undefined>, axios.AxiosError>>
     {
-        return await this.post('/user/reset/forget',{
+        return await this.post('/users/reset/forget',{
             inner: window.btoa(JSON.stringify(data))
         })
     }
     async Logout():
         Promise<AxiosResponse<R<undefined>, axios.AxiosError>>
     {
-        return await this.post('/user/logout',{})
+        return await this.post('/users/logout',{})
     }
     async Update(data: UserUpdate):
         Promise<AxiosResponse<R<ExecResult[]>, axios.AxiosError>>
     {
-        return await this.post('/user/update',data)
+        return await this.post('/users/update',data)
     }
     async Local():
         Promise<AxiosResponse<R<SessionUserValue>, axios.AxiosError>>
     {
-        return await this.post('/user/local',{})
+        return await this.post('/users/local',{})
     }
 
 
