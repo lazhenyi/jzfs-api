@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export const BASIC_URL = "http://localhost:3000/api/v1";
+export const BASIC_URL = "/api/v1";
 
 export class BasicNet{
     async post(url: string, data: object,options?: any) {

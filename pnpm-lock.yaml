@@ -11,6 +11,9 @@ importers:
       axios:
         specifier: ^1.7.8
         version: 1.7.8
+      uuid:
+        specifier: ^11.0.3
+        version: 11.0.3
     devDependencies:
       typescript:
         specifier: ^5.5.3
@@ -61,6 +64,10 @@ packages:
     engines: {node: '>=14.17'}
     hasBin: true
 
+  uuid@11.0.3:
+    resolution: {integrity: sha512-d0z310fCWv5dJwnX1Y/MncBAqGMKEzlBb1AOf7z9K8ALnd0utBX/msg/fA0+sbyN1ihbMsLhrBlnl1ak7Wa0rg==}
+    hasBin: true
+
 snapshots:
 
   asynckit@0.4.0: {}
@@ -96,3 +103,5 @@ snapshots:
   proxy-from-env@1.1.0: {}
 
   typescript@5.7.2: {}
+
+  uuid@11.0.3: {}

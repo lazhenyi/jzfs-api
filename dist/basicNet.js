@@ -14,7 +14,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.BasicNet = exports.BASIC_URL = void 0;
 const axios_1 = __importDefault(require("axios"));
-exports.BASIC_URL = "http://localhost:3000/api/v1";
+exports.BASIC_URL = "/api/v1";
 class BasicNet {
     post(url, data, options) {
         return __awaiter(this, void 0, void 0, function* () {
